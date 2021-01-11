@@ -22,7 +22,7 @@ print("Loaded language model")
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Tiempo Arg keywords supervised generator!'
 
 
 @app.route('/api/keywords', methods=['POST'])

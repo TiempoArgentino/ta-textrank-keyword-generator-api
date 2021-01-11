@@ -61,10 +61,10 @@ if __name__ == "__main__":
     useful when hosting the service in the cloud as it prevents against
     us forgetting to do this via the CLI
     """
-    subprocess.call("python -m spacy download en_core_web_sm", shell=True)
+    subprocess.call("python -m spacy download es_core_news_sm", shell=True)
 
     # load the small english language model,
-    nlp = spacy.load("en_core_web_sm")
+    nlp = spacy.load("es_core_news_sm")
 
     print("Loaded language vocabulary")
     print(extract_keywords(nlp, """Learning how to use natural language
