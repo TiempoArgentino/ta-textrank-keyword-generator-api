@@ -4,6 +4,7 @@ import spacy
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 from extract_keywords import extract_keywords
+from textRank import TextRank4Keyword
 #from fuzzy import get_fuzzy_similarity
 import subprocess
 
@@ -31,3 +32,12 @@ def get_keywords():
     tags = request.json.get("tags")
     keywords = extract_keywords(nlp, query_string, tags)
     return jsonify(keywords=keywords)
+
+
+@app.route('/api/textrank', methods=['POST'])
+def get_textrank():
+    tr4w = TextRank4Keyword()
+    query_string = request.json.get("query_string")
+    tr4w.analyze(query_string, candidate_pos=[
+                 'NOUN', 'PROPN'], window_size=4, lower=False)
+    return tr4w.get_keywords(10)
