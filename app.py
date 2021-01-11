@@ -40,4 +40,5 @@ def get_textrank():
     query_string = request.json.get("query_string")
     tr4w.analyze(query_string, candidate_pos=[
                  'NOUN', 'PROPN'], window_size=4, lower=False)
-    return tr4w.get_keywords(10)
+    keywords = tr4w.get_keywords(10)
+    return jsonify(keywords=keywords)
