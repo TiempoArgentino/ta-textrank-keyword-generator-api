@@ -22,6 +22,7 @@ def extract_keywords(nlp, sequence, special_tags: list = None):
         {list} -- list of the unique keywords extracted from a string
     """
     result = []
+    
 
     # custom list of part of speech tags we are interested in
     # we are interested in proper nouns, nouns, and adjectives
