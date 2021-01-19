@@ -50,7 +50,7 @@ def get_textrank():
         query_string = request.form.get("query_string")
         tr4w.analyze(query_string, candidate_pos=[
                     'NOUN', 'PROPN'], window_size=4, lower=False)
-        keywords = tr4w.get_keywords(10)
+        keywords = tr4w.get_keywords(25)
         return jsonify(keywords=keywords,text = query_string)
     return render_template("form2.html") 
 

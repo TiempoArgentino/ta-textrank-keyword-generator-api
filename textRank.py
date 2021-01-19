@@ -95,7 +95,7 @@ class TextRank4Keyword():
                 return list(set(result))
 
     def analyze(self, text,
-                candidate_pos=['NOUN', 'PROPN'],
+                candidate_pos=['NOUN', 'PROPN', 'ADJ'],
                 window_size=4, lower=False, stopwords=list()):
         """Main function to analyze text"""
 
