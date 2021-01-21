@@ -92,7 +92,8 @@ class TextRank4Keyword():
             print(key + ' - ' + str(value))
             if key and len(key) >= 2 :
                 print(last_word)
-                result.append(key + ' - ' + str(value))
+                # result.append(key + ' - ' + str(value))
+                result.append(key)
        
             if i >= number:
                 return result
