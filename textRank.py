@@ -88,13 +88,22 @@ class TextRank4Keyword():
         result = []
         node_weight = OrderedDict(
             sorted(self.node_weight.items(), key=lambda t: t[1], reverse=True))
+        if number >= len(node_weight.items()):
+            breakpoint = len(node_weight.items())
+        else:
+            breakpoint = number
+
+        print('breakpoint')
+        print(breakpoint)
+
         for i, (key, value) in enumerate(node_weight.items()):
             print(key + ' - ' + str(value))
             if key and len(key) >= 2 :
                 # result.append(key + ' - ' + str(value))
                 result.append(key)
+                print(len(node_weight.items()))
        
-            if i >= number:
+            if i >= breakpoint -1:
                 return result
 
     def analyze(self, text,
