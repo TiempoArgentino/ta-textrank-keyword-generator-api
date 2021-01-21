@@ -90,9 +90,12 @@ class TextRank4Keyword():
             sorted(self.node_weight.items(), key=lambda t: t[1], reverse=True))
         for i, (key, value) in enumerate(node_weight.items()):
             print(key + ' - ' + str(value))
-            result.append(key + ' - ' + str(value))
-            if i > number:
-                return list(set(result))
+            if key and len(key) >= 2 :
+                print(last_word)
+                result.append(key + ' - ' + str(value))
+       
+            if i >= number:
+                return result
 
     def analyze(self, text,
                 candidate_pos=['NOUN', 'PROPN', 'ADJ'],

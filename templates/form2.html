@@ -1,3 +1,7 @@
 <form action="{{ url_for('get_textrank')}}" method="post">
     <textarea name="query_string" id="query_string" cols="30" rows="10"></textarea>
+    <label for="keywords_qty">Number of keywords (1-100):</label>
+
+    <input type="number" id="keywords_qty" name="keywords_qty" min="1" max="100">
+
     <button type="submit">Generar Tags!</button>

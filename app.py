@@ -48,9 +48,10 @@ def get_textrank():
     if request.method == "POST": 
         tr4w = TextRank4Keyword()
         query_string = request.form.get("query_string")
+        keywords_qty = int(request.form.get("keywords_qty"))
         tr4w.analyze(query_string, candidate_pos=[
-                    'NOUN', 'PROPN'], window_size=4, lower=False)
-        keywords = tr4w.get_keywords(25)
+                    'NOUN', 'PROPN', 'ADJ'], window_size=4, lower=False)
+        keywords = tr4w.get_keywords(keywords_qty)
         return jsonify(keywords=keywords,text = query_string)
     return render_template("form2.html") 
 
