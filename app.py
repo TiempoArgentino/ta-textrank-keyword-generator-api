@@ -10,8 +10,8 @@ import subprocess
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # app.run(host="0.0.0.0",port=4000)
-    app.run()
+    app.run(host="0.0.0.0",port=4000)
+
 # CORS(app)
 
 # if you want to download the large model
