@@ -97,11 +97,11 @@ class TextRank4Keyword():
         print(breakpoint)
 
         for i, (key, value) in enumerate(node_weight.items()):
-            print(key + ' - ' + str(value))
+            # print(key + ' - ' + str(value))
             if key and len(key) >= 2 :
                 # result.append(key + ' - ' + str(value))
                 result.append(key)
-                print(len(node_weight.items()))
+                # print(len(node_weight.items()))
        
             if i >= breakpoint -1:
                 return result

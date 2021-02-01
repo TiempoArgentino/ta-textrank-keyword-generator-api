@@ -13,7 +13,11 @@ import subprocess
 subprocess.call("python -m spacy download es_core_news_sm", shell=True)
 
 app = Flask(__name__)
-CORS(app)
+if __name__ == '__main__':
+    app.run(host="0.0.0.0",port=4000)
+CORS(app, support_credentials=True)
+
+# CORS(app)
 
 # if you want to load the large model
 # nlp = spacy.load("en_core_web_lg")
@@ -27,28 +31,30 @@ print("Loaded language model")
 def main():
     return render_template("index.html")
 
-@app.route('/api/keywords', methods =["GET", "POST"]) 
-def gfg(): 
-    if request.method == "POST": 
-       # getting input with name = fname in HTML form 
-       query_string = request.form.get("query_string")
-       #tags = request.form.get("tags")
-       #keywords = extract_keywords(nlp, query_string, tags)
-       keywords = extract_keywords(nlp, query_string)
+# @app.route('/api/keywords', methods =["GET", "POST"]) 
+# def gfg(): 
+#     if request.method == "POST": 
+#        # getting input with name = fname in HTML form 
+#        query_string = request.form.get("query_string")
+#        #tags = request.form.get("tags")
+#        #keywords = extract_keywords(nlp, query_string, tags)
+#        keywords = extract_keywords(nlp, query_string)
        
-       #return redirect(url_for("user",usr = keywords))
-       return jsonify(text=query_string, keywords=keywords)
-       # getting input with name = lname in HTML form  
-       #last_name = request.form.get("lname")  
-       #return "Your name is "+first_name + last_name 
-    return render_template("form.html") 
+#        #return redirect(url_for("user",usr = keywords))
+#        return jsonify(text=query_string, keywords=keywords)
+#        # getting input with name = lname in HTML form  
+#        #last_name = request.form.get("lname")  
+#        #return "Your name is "+first_name + last_name 
+#     return render_template("form.html") 
 
 @app.route('/api/textrank', methods =["GET", "POST"]) 
 def get_textrank(): 
     if request.method == "POST": 
         tr4w = TextRank4Keyword()
-        query_string = request.form.get("query_string")
-        keywords_qty = int(request.form.get("keywords_qty"))
+        # query_string = request.form.get("query_string")
+        # keywords_qty = int(request.form.get("keywords_qty"))
+        query_string = request.json.get("query_string")
+        keywords_qty = int(request.json.get("keywords_qty"))
         tr4w.analyze(query_string, candidate_pos=[
                     'NOUN', 'PROPN', 'ADJ'], window_size=4, lower=False)
         keywords = tr4w.get_keywords(keywords_qty)
