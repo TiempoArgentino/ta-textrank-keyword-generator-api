@@ -8,6 +8,12 @@ from textRank import TextRank4Keyword
 #from fuzzy import get_fuzzy_similarity
 import subprocess
 
+app = Flask(__name__)
+if __name__ == '__main__':
+    # app.run(host="0.0.0.0",port=4000)
+    app.run()
+# CORS(app)
+
 # if you want to download the large model
 # subprocess.call("python -m spacy download en_core_web_lg",shell=True)
 subprocess.call("python -m spacy download es_core_news_sm", shell=True)
@@ -77,10 +83,3 @@ def get_textrank():
 #     keywords = tr4w.get_keywords(10)
 #     return jsonify(keywords=keywords)
 
-app = Flask(__name__)
-if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=4000)
-
-
-
-# CORS(app)
