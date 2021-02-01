@@ -47,6 +47,8 @@ def main():
 #        #return "Your name is "+first_name + last_name 
 #     return render_template("form.html") 
 
+
+
 @app.route('/api/textrank', methods =["GET", "POST"]) 
 def get_textrank(): 
     if request.method == "POST": 
