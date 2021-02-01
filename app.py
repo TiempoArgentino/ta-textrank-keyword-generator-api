@@ -14,7 +14,8 @@ subprocess.call("python -m spacy download es_core_news_sm", shell=True)
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=4000)
+    # app.run(host="0.0.0.0",port=4000)
+    app.run()
 
 
 # CORS(app)
@@ -46,8 +47,6 @@ def main():
 #        #last_name = request.form.get("lname")  
 #        #return "Your name is "+first_name + last_name 
 #     return render_template("form.html") 
-
-
 
 @app.route('/api/textrank', methods =["GET", "POST"]) 
 def get_textrank(): 
