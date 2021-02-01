@@ -14,8 +14,9 @@ subprocess.call("python -m spacy download es_core_news_sm", shell=True)
 
 app = Flask(__name__)
 if __name__ == '__main__':
+    CORS(app, support_credentials=True)
     app.run(host="0.0.0.0",port=4000)
-CORS(app, support_credentials=True)
+
 
 # CORS(app)
 

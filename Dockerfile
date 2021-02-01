@@ -1,20 +1,3 @@
-# FROM alpine:3.10
-
-# RUN apk add --no-cache python3-dev \
-#     && pip3 install --upgrade pip
-
-# WORKDIR /app
-
-# COPY . /app
-
-# RUN pip3 --no-cache-dir install -r requirements.txt
-# RUN python -m spacy download es_core_news_sm
-
-
-# CMD ["python3", "app.py"]
-
-# Docker file for a slim Ubuntu-based Python3 image
-
 FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
