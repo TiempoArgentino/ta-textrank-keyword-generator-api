@@ -8,14 +8,29 @@
 </head>
 
 <body>
-    <h3>PARA ver de manera correcta las respuestas instalar el siguiente complemento de Google Chrome</h3>
-    <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en"
+    <h3>Welcome to te TextRank tags generator API.</h3>
+    This API extracts keywords from text. The algorithm uses a neural network specifically designed for natural language
+    processing.
+    It is based on the TextRank algorithm that extracts words according to their weight in the text.
+    For this occasion we have limited the algorithm so that only nouns, pronouns and verbs of the text to be consulted are
+    taken into account.
+
+    Method: <br>
+    `POST /api/textrank` <br>
+    
+    Headers:
+    Accept: 'application/json'
+    <br>
+    Body example:
+    {"query_string": "text",
+    "keywords_qty": "number of tags to return"}
+    <!-- <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en"
         target="_blank">COMPLEMENTO PARA RESPUESTAS JSON</a>
-    <p>Se debolverá el texto y las palabras claves detectadas</p>
+    <p>Se debolverá el texto y las palabras claves detectadas</p> -->
     <!-- <a href="https://tiempoar-supervised-learning.herokuapp.com/api/keywords">Method 1</a> -->
-    <a href="https://tiempoar-supervised-learning.herokuapp.com/api/textrank">heroku </a> <br>
+    <!-- <a href="https://tiempoar-supervised-learning.herokuapp.com/api/textrank">heroku </a> <br> -->
     <!-- <a href="http://localhost:5000/api/keywords">Method 1</a> -->
-    <a href="http://0.0.0.0:7000/api/textrank">Docker Image</a>
+    <!-- <a href="http://0.0.0.0:7000/api/textrank">Docker Image</a> -->
 </body>
 
 </html>
