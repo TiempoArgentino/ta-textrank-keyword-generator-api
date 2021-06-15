@@ -1,3 +1,12 @@
+Español
+
+Este plugin fue desarrollado como parte de una estrategia Open Source para medios de todo el mundo basada en el CMS Wordpress.
+Haciendo click en este enlace se puede encontrar más información sobre el proyecto, así como las lista de plugins que complementan a este para tener un sitio completamente funcional.
+
+English
+
+This plugin was developed as part of an Open Source strategy for worldwide media based on the CMS WordPress. By clicking on this link you can find more information about the project, as well as the list of complements that complement it to have a fully functional site.
+
 # CONTENT BALANCER REST API
 
 This API extracts keywords from text. The algorithm uses a neural network specifically designed for natural language processing.
