@@ -9,10 +9,17 @@ This plugin was developed as part of an **Open Source** strategy for worldwide m
 By clicking on this [link](https://tiempoar.com.ar/proyecto-colaborativo/) you can find more information about the project, as well as the list of complements that complement it to have a fully functional site.
 
 # CONTENT BALANCER REST API
+EN
 
 This API extracts keywords from text. The algorithm uses a neural network specifically designed for natural language processing.
 It is based on the TextRank algorithm that extracts words according to their weight in the text.
 For this occasion we have limited the algorithm so that only nouns, pronouns and verbs of the text to be consulted are taken into account.
+
+ES
+
+Esta API extrae palabras clave de un texto. El algoritmo utiliza una red neuronal diseñada específicamente para el procesamiento del lenguaje natural. Se basa en el algoritmo TextRank que extrae palabras según su peso en el texto. Para esta ocasión hemos acotado el algoritmo para que solo se tengan en cuenta los sustantivos, pronombres y verbos del texto a consultar.
+
+
 
 ## Install
 
