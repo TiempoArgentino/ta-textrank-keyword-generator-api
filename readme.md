@@ -21,13 +21,15 @@ Esta API extrae palabras clave de un texto. El algoritmo utiliza una red neurona
 
 
 
-## Install
+## Run as a Flask app
 
     1. Set the flask app
         FLASK_APP=/app/app.py
 
     2. Run the app
         flask run --host=0.0.0.0
+        
+### To deploy in production create a Docker image
 
 # API method
 
